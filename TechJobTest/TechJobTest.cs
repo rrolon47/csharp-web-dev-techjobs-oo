@@ -49,6 +49,13 @@ namespace TechJobTest
             Assert.AreEqual(jobConstructor.JobCoreCompetency.Value, "Persistence");
         }
 
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Assert.IsFalse(job1.Equals(job2));
+        }
 
     }
 }
