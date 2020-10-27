@@ -16,6 +16,7 @@ namespace TechJobsOO
             nextId++;
         }
 
+        //do we need to include this constructor??
         public JobField(string value) : this()
         {
             Value = value;
