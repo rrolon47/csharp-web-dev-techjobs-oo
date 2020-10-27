@@ -7,7 +7,7 @@ namespace TechJobsOO
     public class Job
     {
         public int Id { get; }
-        private static int nextId = 1;
+        private static int nextId =1 ;
 
         public string Name { get; set; }
         public Employer EmployerName { get; set; }
@@ -44,7 +44,23 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        
+        public override string ToString()
+        {
+            if (String.IsNullOrEmpty(this.Name))
+            {
+                this.Name = "Data not avaliable.";
+            }
+
+            return $"_____\n" +
+                $"ID: {this.Id}\n" +
+                $"Name: {this.Name}\n" +
+                $"Employer: {this.EmployerName.ToString()}\n" +
+                $"Location: {this.EmployerLocation.ToString()}\n" +
+                $"Position Type: {this.JobType.ToString()}\n" +
+                $"Core Competency: {this.JobCoreCompetency.ToString()}\n" +
+                $"_____";
+        }
+
 
     }
 }

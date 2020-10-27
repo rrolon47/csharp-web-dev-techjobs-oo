@@ -31,6 +31,10 @@ namespace TechJobsOO
 
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(this.Value))
+            {
+                this.Value = "Data not avaliable.";
+            }
             return Value;
         }
     }
