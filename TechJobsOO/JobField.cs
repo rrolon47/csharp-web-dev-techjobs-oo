@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TechJobsOO
 {
-    abstract class JobField
+    public abstract class JobField
     {
         public int Id { get; }
         private static int nextId = 1;
