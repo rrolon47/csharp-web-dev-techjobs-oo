@@ -77,6 +77,7 @@ namespace TechJobTest
         [TestMethod]
         public void TestToStringMethod3()
         {
+            //Job job = new Job();  //Why doesn't this work??
             Job job = new Job( "", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
             Assert.AreEqual($"_____\n" +
                 $"ID: {job.Id}\n" +
@@ -88,6 +89,11 @@ namespace TechJobTest
                 $"_____", job.ToString());
         }
 
+        //[TestMethod]
+        //public void TestToStringMethod4Bonus()
+        //{
+        //(Bonus) If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist.”
+        //}
       
 
     }
