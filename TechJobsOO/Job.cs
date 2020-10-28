@@ -15,11 +15,11 @@ namespace TechJobsOO
         public PositionType JobType { get; set; }
         public CoreCompetency JobCoreCompetency { get; set; }
 
-        // TODO: Add the two necessary constructors.
-        public Job()
+         public Job()
         {
             Id = nextId;
-            nextId++;
+            nextId++;// TODO: Add the two necessary constructors.
+       
         }
 
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
@@ -46,19 +46,26 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            if (String.IsNullOrEmpty(this.Name))
+            try
             {
-                this.Name = "Data not avaliable.";
-            }
+                if (String.IsNullOrEmpty(this.Name))
+                {
+                    this.Name = "Data not avaliable.";
+                }
 
-            return $"_____\n" +
-                $"ID: {this.Id}\n" +
-                $"Name: {this.Name}\n" +
-                $"Employer: {this.EmployerName.ToString()}\n" +
-                $"Location: {this.EmployerLocation.ToString()}\n" +
-                $"Position Type: {this.JobType.ToString()}\n" +
-                $"Core Competency: {this.JobCoreCompetency.ToString()}\n" +
-                $"_____";
+                return $"_____\n" +
+                    $"ID: {this.Id}\n" +
+                    $"Name: {this.Name}\n" +
+                    $"Employer: {this.EmployerName.ToString()}\n" +
+                    $"Location: {this.EmployerLocation.ToString()}\n" +
+                    $"Position Type: {this.JobType.ToString()}\n" +
+                    $"Core Competency: {this.JobCoreCompetency.ToString()}\n" +
+                    $"_____";
+            }
+            catch(NullReferenceException e)
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
         }
 
 

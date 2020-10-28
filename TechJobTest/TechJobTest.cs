@@ -77,8 +77,6 @@ namespace TechJobTest
         [TestMethod]
         public void TestToStringMethod3()
         {
-            //Job job = new Job();  //if I comment out the instance of the object below Why doesn't this line work?? isnt is just instaniating a object with just the id?
-            //Should I make a test for each missing value? I will when I do the bonus but what is best practice?
             Job job = new Job( "", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
             Assert.AreEqual($"_____\n" +
                 $"ID: {job.Id}\n" +
@@ -90,13 +88,13 @@ namespace TechJobTest
                 $"_____", job.ToString());
         }
 
-        //[TestMethod]
-        //public void TestToStringMethod4Bonus()
-        //{
-        //(Bonus) If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist.”
-        //I think that answering the question above will help me do this. 
-        //}
-      
+        [TestMethod]
+        public void TestToStringMethod4Bonus()
+        {
+            Job job = new Job();
+            Assert.AreEqual("OOPS! This job does not seem to exist.", job.ToString());
+        }
+
 
     }
 }
